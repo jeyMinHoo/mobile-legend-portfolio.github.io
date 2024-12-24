@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Mobile Legends Fureya - In-Game Stats, Heroes, Achievements">
+    <meta name="keywords" content="Mobile Legends, Fureya, Portfolio, Heroes, Stats">
+    <title>Mobile Legends Portfolio Fureya</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #232323);
+            color: #f5f5f5;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #111;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #f5b300;
+            text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.9);
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #ddd;
+            margin-top: 10px;
+        }
+
+        .account-info {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .account-info h2 {
+            font-size: 2.5em;
+            color: #f5b300;
+            margin-bottom: 20px;
+        }
+
+        .account-info p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .account-info i {
+            font-size: 1.5em;
+            color: #f5b300;
+            margin-right: 10px;
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ukuran gambar lebih kecil */
+            gap: 30px;
+            margin-bottom: 60px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-card {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .hero-card img {
+            width: 100%;
+            max-width: 100%; /* Pastikan gambar responsif */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .hero-card h3 {
+            font-size: 1.8em;
+            color: #f5b300;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 1.1em;
+            color: #ddd;
+        }
+
+        /* Hover effect untuk card */
+        .hero-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            background-color: #444;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 1.2em;
+            color: #ddd;
+            margin-top: 80px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .footer a {
+            color: #f5b300;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        .parallax {
+            background: url('https://www.photoroom.com/id/perpustakaan-latar-belakang/latar-belakang-hitam') no-repeat center center/cover;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+            animation: parallax-effect 15s infinite linear;
+        }
+
+        @keyframes parallax-effect {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            .account-info h2 {
+                font-size: 2em;
+            }
+            .hero-section {
+                grid-template-columns: 1fr;
+            }
+            .hero-card h3 {
+                font-size: 1.5em;
+            }
+            .footer {
+                font-size: 1em;
+            }
+            .footer a {
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            header {
+                padding: 50px 10px;
+            }
+            .account-info {
+                padding: 30px;
+            }
+            .hero-card {
+                padding: 20px;
+            }
+            .hero-card img {
+                width: 100%;
+                max-width: 80%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mobile Legends Portfolio</h1>
+    <p>Explore My Heroes, Stats & Achievements</p>
+</header>
+
+<div class="parallax"></div>
+
+<section class="account-info">
+    <h2>My Mobile Legends Account</h2>
+    <p><i class="fas fa-user"></i><strong>In-Game Name:</strong> Fureya </p>
+    <p><i class="fas fa-id-badge"></i><strong>ID:</strong> 132996776 (2656)</p>
+    <p><i class="fas fa-server"></i><strong>Server:</strong> INDONESIA </p>
+    <p><i class="fas fa-trophy"></i><strong>Rank:</strong> IMMORTAL 5000 </p>
+    <p><strong>Favorite Heroes:</strong> Scroll aja di bawah </p>
+    <p><strong>Role:</strong> Roam </p>
+</section>
+
+<section class="hero-section">
+    <div class="hero-card">
+        <img src="https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_b1bd27f70c015094eaba5e48eacc4762.png" alt="Kufra">
+        <h3>Kufra</h3>
+        <p><strong>Hero Power:</strong> 80910</p>
+        <p><strong>Pertandingan:</strong> 7000</p>
+        <p><strong>Win Rate:</strong> 99.9%</p>
+    </div>
+    <div class="hero-card">
+        <img src="https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_515a1949e9c3dc1ee1a281f45d42b085.png" alt="Mathilda">
+        <h3>Mathilda</h3>
+        <p><strong>Hero Power:</strong> 78000</p>
+        <p><strong>Pertandingan:</strong> 10017</p>
+        <p><strong>Win Rate:</strong> 89.7%</p>
+    </div>
+    <div class="hero-card">
+        <img src="https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_f22e22659e8b1acfb665aec8eaffabd7.png" alt="Rafaela">
+        <h3>Rafaela</h3>
+        <p><strong>Hero Power:</strong> 90010</p>
+        <p><strong>Pertandingan:</strong> 5001</p>
+        <p><strong>Win Rate:</strong> 80.9%</p>
+    </div>
+    <div class="hero-card">
+        <img src="https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_cf2794cfdbea9a75784133863cf6ac83.png" alt="Minotur">
+        <h3>Minotur</h3>
+        <p><strong>Hero Power:</strong> 7000</p>
+        <p><strong>Pertandingan:</strong> 5010</p>
+        <p><strong>Win Rate:</strong> 100%</p>
+    </div>
+    <div class="hero-card">
+        <img src="https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_87a88d7acc62a25869a5316147f3ce6a.png" alt="Kaja">
+        <h3>Kaja</h3>
+        <p><strong>Hero Power:</strong> 13000</p>
+        <p><strong>Pertandingan:</strong> 13100</p>
+        <p><strong>Win Rate:</strong> 97.5%</p>
+    </div>
+    <div class="hero-card">
+        <img src="https://akmweb.youngjoygame.com/web/svnres/img/mlbb/homepage/100_a815a3adad8df99481700c84abaf3c41.png" alt="Angela">
+        <h3>Angela</h3>
+        <p><strong>Hero Power:</strong> 11010</p>
+        <p><strong>Pertandingan:</strong> 7900</p>
+        <p><strong>Win Rate:</strong> 88.9%</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>Follow me on <a href="https://x.com/AsbarJeyje43916?s=09" target="_blank" title="Follow me on Twitter">Twitter</a> and <a href="https://github.com/jeyMinHoo" target="_blank" title="Visit my GitHub">GitHub</a></p>
+    <p>&copy; 2024 Mobile Legends Portfolio</p>
+</footer>
+
+<script>
+    // Parallax effect
+    window.addEventListener('scroll', function() {
+        const scrollPos = window.scrollY;
+        document.querySelector('.parallax').style.transform = `translateY(${scrollPos * 0.5}px)`;
+    });
+</script>
+
+</body>
+</html>
